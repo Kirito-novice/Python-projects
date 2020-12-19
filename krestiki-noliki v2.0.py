@@ -1,4 +1,3 @@
-#ДОПИСАТЬ УСЛОВИЕ ДЛЯ НИЧЬИ
 #ДОРАБОТАТЬ ПОВТОРНУЮ ПОПЫТКУ ЗАНЯТЬ УЖЕ ЗАНЯТУЮ КЛЕТКУ ДЛЯ 2-ого ИГРОКА
 
 a = [['#'] * 3, ['#'] * 3, ['#'] * 3]
@@ -12,6 +11,11 @@ col_down3 = []
 print('*' * 15, 'Игровое поле крестики-нолики', '*' * 15)
 print('', *a[0], '\n', *a[1], '\n', *a[2])
 for i in range(81):
+    def draw():
+        for i in range(3):
+            if '#' not in a[0] and '#' not in a[1] and '#' not in a[2]:
+                print('Ничья')
+                exit()
     def conditions():
         for i in range(3):
             if a[i] == d:
@@ -55,6 +59,7 @@ for i in range(81):
     print('', *a[0], '\n', *a[1], '\n', *a[2])
 
     conditions()
+    draw()
 
     f = list(map(int, input("Ход игрока номер 2 (0): ").split()))
     flag = True
@@ -67,6 +72,7 @@ for i in range(81):
             print('', *a[0], '\n', *a[1], '\n', *a[2])
             continue
     print('', *a[0], '\n', *a[1], '\n', *a[2])
+    draw()
 
 
 
