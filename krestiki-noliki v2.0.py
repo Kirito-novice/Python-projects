@@ -12,10 +12,9 @@ print('*' * 15, 'Игровое поле крестики-нолики', '*' * 1
 print('', *a[0], '\n', *a[1], '\n', *a[2])
 for i in range(81):
     def draw():
-        for i in range(3):
-            if '#' not in a[0] and '#' not in a[1] and '#' not in a[2]:
-                print('Ничья')
-                exit()
+        if '#' not in a[0] and '#' not in a[1] and '#' not in a[2]:
+            print('Ничья')
+            exit()
     def conditions():
         for i in range(3):
             if a[i] == d:
